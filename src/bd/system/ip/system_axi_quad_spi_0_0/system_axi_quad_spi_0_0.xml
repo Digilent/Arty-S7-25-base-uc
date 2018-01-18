@@ -3311,11 +3311,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:417cae39</spirit:value>
+            <spirit:value>7:8c953c72</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3330,11 +3330,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:417cae39</spirit:value>
+            <spirit:value>7:8c953c72</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3372,11 +3372,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:fdb1f489</spirit:value>
+            <spirit:value>7:c43fa818</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3391,11 +3391,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:fdb1f489</spirit:value>
+            <spirit:value>7:c43fa818</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3409,11 +3409,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:417cae39</spirit:value>
+            <spirit:value>7:8c953c72</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3427,11 +3427,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:59:02 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:44:57 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:417cae39</spirit:value>
+            <spirit:value>7:8c953c72</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

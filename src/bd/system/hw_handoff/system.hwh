@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  6 20:57:34 2017" VIVADOVERSION="2017.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 18 12:42:08 2018" VIVADOVERSION="2017.3">
 
-  <SYSTEMINFO ARCH="spartan7" BOARD="digilentinc.com:arty-s7-50:part0:1.0" DEVICE="7s50" NAME="system" PACKAGE="csga324" SPEEDGRADE="-1"/>
+  <SYSTEMINFO ARCH="spartan7" BOARD="digilentinc.com:arty-s7-25:part0:1.0" DEVICE="7s25" NAME="system" PACKAGE="csga324" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="Vaux0_v_n" SIGIS="undef"/>
@@ -14,8 +14,6 @@
     <PORT DIR="I" NAME="Vaux3_v_p" SIGIS="undef"/>
     <PORT DIR="I" NAME="Vaux8_v_n" SIGIS="undef"/>
     <PORT DIR="I" NAME="Vaux8_v_p" SIGIS="undef"/>
-    <PORT DIR="I" NAME="Vaux9_v_n" SIGIS="undef"/>
-    <PORT DIR="I" NAME="Vaux9_v_p" SIGIS="undef"/>
     <PORT DIR="I" NAME="Vaux10_v_n" SIGIS="undef"/>
     <PORT DIR="I" NAME="Vaux10_v_p" SIGIS="undef"/>
     <PORT DIR="I" NAME="Vaux11_v_n" SIGIS="undef"/>
@@ -60,6 +58,10 @@
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" NAME="Vaux4_v_n" SIGIS="undef"/>
+    <PORT DIR="I" NAME="Vaux4_v_p" SIGIS="undef"/>
+    <PORT DIR="I" NAME="Vaux5_v_n" SIGIS="undef"/>
+    <PORT DIR="I" NAME="Vaux5_v_p" SIGIS="undef"/>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -91,12 +93,6 @@
       <PORTMAPS>
         <PORTMAP LOGICAL="V_N" PHYSICAL="Vaux8_v_n"/>
         <PORTMAP LOGICAL="V_P" PHYSICAL="Vaux8_v_p"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="External_Interface_Vaux9" NAME="Vaux9" TYPE="TARGET">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="V_N" PHYSICAL="Vaux9_v_n"/>
-        <PORTMAP LOGICAL="V_P" PHYSICAL="Vaux9_v_p"/>
       </PORTMAPS>
     </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="External_Interface_Vaux10" NAME="Vaux10" TYPE="TARGET">
@@ -157,6 +153,18 @@
       <PORTMAPS>
         <PORTMAP LOGICAL="RxD" PHYSICAL="usb_uart_rxd"/>
         <PORTMAP LOGICAL="TxD" PHYSICAL="usb_uart_txd"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_Vaux4" NAME="Vaux4" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="V_N" PHYSICAL="Vaux4_v_n"/>
+        <PORTMAP LOGICAL="V_P" PHYSICAL="Vaux4_v_p"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_Vaux5" NAME="Vaux5" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="V_N" PHYSICAL="Vaux5_v_n"/>
+        <PORTMAP LOGICAL="V_P" PHYSICAL="Vaux5_v_p"/>
       </PORTMAPS>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
@@ -2783,8 +2791,6 @@
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PWM_0" PORT="pwm_axi_aclk"/>
-            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_clk"/>
-            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_gpio_input" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_gpio_led" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
@@ -2792,12 +2798,14 @@
             <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="microblaze_0" PORT="Clk"/>
+            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_clk"/>
             <CONNECTION INSTANCE="rst_clk_wiz_0_100M" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="xadc_wiz_0" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="LMB_Clk"/>
-            <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="LMB_Clk"/>
             <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_bram_if_cntlr" PORT="LMB_Clk"/>
+            <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="LMB_Clk"/>
             <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_bram_if_cntlr" PORT="LMB_Clk"/>
+            <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="LMB_Clk"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="M00_ACLK"/>
@@ -3775,7 +3783,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 0 with highest priority.&#xA;"/>
@@ -3795,7 +3803,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 1 with highest priority.&#xA;"/>
@@ -3815,7 +3823,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 2 with highest priority.&#xA;"/>
@@ -3835,7 +3843,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 3 with highest priority.&#xA;"/>
@@ -3855,7 +3863,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 4 with highest priority.&#xA;"/>
@@ -3875,7 +3883,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 5 with highest priority.&#xA;"/>
@@ -3895,7 +3903,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 6 with highest priority.&#xA;"/>
@@ -3915,7 +3923,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 7 with highest priority.&#xA;"/>
@@ -3935,7 +3943,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 8 with highest priority.&#xA;"/>
@@ -3955,7 +3963,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 9 with highest priority.&#xA;"/>
@@ -3975,7 +3983,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 10 with highest priority.&#xA;"/>
@@ -3995,7 +4003,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 11 with highest priority.&#xA;"/>
@@ -4015,7 +4023,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 12 with highest priority.&#xA;"/>
@@ -4035,7 +4043,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 13 with highest priority.&#xA;"/>
@@ -4055,7 +4063,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 14 with highest priority.&#xA;"/>
@@ -4075,7 +4083,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 15 with highest priority.&#xA;"/>
@@ -4095,7 +4103,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 16 with highest priority.&#xA;"/>
@@ -4115,7 +4123,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 17 with highest priority.&#xA;"/>
@@ -4135,7 +4143,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 18 with highest priority.&#xA;"/>
@@ -4155,7 +4163,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 19 with highest priority.&#xA;"/>
@@ -4175,7 +4183,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 20 with highest priority.&#xA;"/>
@@ -4195,7 +4203,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 21 with highest priority.&#xA;"/>
@@ -4215,7 +4223,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 22 with highest priority.&#xA;"/>
@@ -4235,7 +4243,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 23 with highest priority.&#xA;"/>
@@ -4255,7 +4263,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 24 with highest priority.&#xA;"/>
@@ -4275,7 +4283,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 25 with highest priority.&#xA;"/>
@@ -4295,7 +4303,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 26 with highest priority.&#xA;"/>
@@ -4315,7 +4323,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 27 with highest priority.&#xA;"/>
@@ -4335,7 +4343,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 28 with highest priority.&#xA;"/>
@@ -4355,7 +4363,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 29 with highest priority.&#xA;"/>
@@ -4375,7 +4383,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 30 with highest priority.&#xA;"/>
@@ -4395,7 +4403,7 @@
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="false"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0x00000010"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="16"/>
               <FIELDS>
                 <FIELD NAME="IVA">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Interrupt vector address of active interrupt 31 with highest priority.&#xA;"/>
@@ -7107,16 +7115,16 @@
         </PORT>
         <PORT DIR="O" NAME="mb_reset" SIGIS="rst" SIGNAME="rst_clk_wiz_0_100M_mb_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_rst"/>
             <CONNECTION INSTANCE="microblaze_0" PORT="Reset"/>
+            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_rst"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" RIGHT="0" SIGIS="rst" SIGNAME="rst_clk_wiz_0_100M_bus_struct_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="SYS_Rst"/>
-            <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="SYS_Rst"/>
             <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_bram_if_cntlr" PORT="LMB_Rst"/>
+            <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="SYS_Rst"/>
             <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_bram_if_cntlr" PORT="LMB_Rst"/>
+            <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="SYS_Rst"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
@@ -7128,12 +7136,12 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_clk_wiz_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PWM_0" PORT="pwm_axi_aresetn"/>
-            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_gpio_input" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_gpio_led" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="xadc_wiz_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="M00_ARESETN"/>
@@ -7205,7 +7213,7 @@
         <PARAMETER NAME="C_ALARM_LIMIT_R14" VALUE="27306"/>
         <PARAMETER NAME="C_ALARM_LIMIT_R15" VALUE="25122"/>
         <PARAMETER NAME="C_SEQUENCE_R0" VALUE="2304"/>
-        <PARAMETER NAME="C_SEQUENCE_R1" VALUE="3855"/>
+        <PARAMETER NAME="C_SEQUENCE_R1" VALUE="3391"/>
         <PARAMETER NAME="C_SEQUENCE_R2" VALUE="0"/>
         <PARAMETER NAME="C_SEQUENCE_R3" VALUE="0"/>
         <PARAMETER NAME="C_SEQUENCE_R4" VALUE="0"/>
@@ -7216,12 +7224,12 @@
         <PARAMETER NAME="C_VAUX1" VALUE="1"/>
         <PARAMETER NAME="C_VAUX2" VALUE="1"/>
         <PARAMETER NAME="C_VAUX3" VALUE="1"/>
-        <PARAMETER NAME="C_VAUX4" VALUE="0"/>
-        <PARAMETER NAME="C_VAUX5" VALUE="0"/>
+        <PARAMETER NAME="C_VAUX4" VALUE="1"/>
+        <PARAMETER NAME="C_VAUX5" VALUE="1"/>
         <PARAMETER NAME="C_VAUX6" VALUE="0"/>
         <PARAMETER NAME="C_VAUX7" VALUE="0"/>
         <PARAMETER NAME="C_VAUX8" VALUE="1"/>
-        <PARAMETER NAME="C_VAUX9" VALUE="1"/>
+        <PARAMETER NAME="C_VAUX9" VALUE="0"/>
         <PARAMETER NAME="C_VAUX10" VALUE="1"/>
         <PARAMETER NAME="C_VAUX11" VALUE="1"/>
         <PARAMETER NAME="C_VAUX12" VALUE="0"/>
@@ -7317,12 +7325,12 @@
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP1_VAUXN1" VALUE="true"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP2_VAUXN2" VALUE="true"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP3_VAUXN3" VALUE="true"/>
-        <PARAMETER NAME="CHANNEL_ENABLE_VAUXP4_VAUXN4" VALUE="false"/>
-        <PARAMETER NAME="CHANNEL_ENABLE_VAUXP5_VAUXN5" VALUE="false"/>
+        <PARAMETER NAME="CHANNEL_ENABLE_VAUXP4_VAUXN4" VALUE="true"/>
+        <PARAMETER NAME="CHANNEL_ENABLE_VAUXP5_VAUXN5" VALUE="true"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP6_VAUXN6" VALUE="false"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP7_VAUXN7" VALUE="false"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP8_VAUXN8" VALUE="true"/>
-        <PARAMETER NAME="CHANNEL_ENABLE_VAUXP9_VAUXN9" VALUE="true"/>
+        <PARAMETER NAME="CHANNEL_ENABLE_VAUXP9_VAUXN9" VALUE="false"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP10_VAUXN10" VALUE="true"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP11_VAUXN11" VALUE="true"/>
         <PARAMETER NAME="CHANNEL_ENABLE_VAUXP12_VAUXN12" VALUE="false"/>
@@ -7507,10 +7515,12 @@
         <PORT DIR="I" NAME="vauxn2" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxp3" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxn3" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vauxp4" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vauxn4" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vauxp5" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vauxn5" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxp8" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxn8" SIGIS="undef"/>
-        <PORT DIR="I" NAME="vauxp9" SIGIS="undef"/>
-        <PORT DIR="I" NAME="vauxn9" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxp10" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxn10" SIGIS="undef"/>
         <PORT DIR="I" NAME="vauxp11" SIGIS="undef"/>
@@ -7607,16 +7617,22 @@
             <PORTMAP LOGICAL="V_P" PHYSICAL="vauxp3"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_Vaux4" NAME="Vaux4" TYPE="TARGET" VLNV="xilinx.com:interface:diff_analog_io:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="V_N" PHYSICAL="vauxn4"/>
+            <PORTMAP LOGICAL="V_P" PHYSICAL="vauxp4"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_Vaux5" NAME="Vaux5" TYPE="TARGET" VLNV="xilinx.com:interface:diff_analog_io:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="V_N" PHYSICAL="vauxn5"/>
+            <PORTMAP LOGICAL="V_P" PHYSICAL="vauxp5"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="External_Interface_Vaux8" NAME="Vaux8" TYPE="TARGET" VLNV="xilinx.com:interface:diff_analog_io:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="V_N" PHYSICAL="vauxn8"/>
             <PORTMAP LOGICAL="V_P" PHYSICAL="vauxp8"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="External_Interface_Vaux9" NAME="Vaux9" TYPE="TARGET" VLNV="xilinx.com:interface:diff_analog_io:1.0">
-          <PORTMAPS>
-            <PORTMAP LOGICAL="V_N" PHYSICAL="vauxn9"/>
-            <PORTMAP LOGICAL="V_P" PHYSICAL="vauxp9"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="External_Interface_Vaux10" NAME="Vaux10" TYPE="TARGET" VLNV="xilinx.com:interface:diff_analog_io:1.0">

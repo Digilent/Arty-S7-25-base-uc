@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
---Date        : Wed Dec  6 20:57:27 2017
+--Date        : Thu Jan 18 12:42:00 2018
 --Host        : DESKTOP-9HMNAI5 running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -25,10 +25,12 @@ entity system_wrapper is
     Vaux2_v_p : in STD_LOGIC;
     Vaux3_v_n : in STD_LOGIC;
     Vaux3_v_p : in STD_LOGIC;
+    Vaux4_v_n : in STD_LOGIC;
+    Vaux4_v_p : in STD_LOGIC;
+    Vaux5_v_n : in STD_LOGIC;
+    Vaux5_v_p : in STD_LOGIC;
     Vaux8_v_n : in STD_LOGIC;
     Vaux8_v_p : in STD_LOGIC;
-    Vaux9_v_n : in STD_LOGIC;
-    Vaux9_v_p : in STD_LOGIC;
     Vp_Vn_v_n : in STD_LOGIC;
     Vp_Vn_v_p : in STD_LOGIC;
     dip_switches_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -60,8 +62,6 @@ architecture STRUCTURE of system_wrapper is
     Vaux3_v_p : in STD_LOGIC;
     Vaux8_v_n : in STD_LOGIC;
     Vaux8_v_p : in STD_LOGIC;
-    Vaux9_v_n : in STD_LOGIC;
-    Vaux9_v_p : in STD_LOGIC;
     Vaux10_v_n : in STD_LOGIC;
     Vaux10_v_p : in STD_LOGIC;
     Vaux11_v_n : in STD_LOGIC;
@@ -92,7 +92,11 @@ architecture STRUCTURE of system_wrapper is
     usb_uart_txd : out STD_LOGIC;
     rgb_led : out STD_LOGIC_VECTOR ( 5 downto 0 );
     reset : in STD_LOGIC;
-    sys_clock : in STD_LOGIC
+    sys_clock : in STD_LOGIC;
+    Vaux4_v_n : in STD_LOGIC;
+    Vaux4_v_p : in STD_LOGIC;
+    Vaux5_v_n : in STD_LOGIC;
+    Vaux5_v_p : in STD_LOGIC
   );
   end component system;
   component IOBUF is
@@ -212,10 +216,12 @@ system_i: component system
       Vaux2_v_p => Vaux2_v_p,
       Vaux3_v_n => Vaux3_v_n,
       Vaux3_v_p => Vaux3_v_p,
+      Vaux4_v_n => Vaux4_v_n,
+      Vaux4_v_p => Vaux4_v_p,
+      Vaux5_v_n => Vaux5_v_n,
+      Vaux5_v_p => Vaux5_v_p,
       Vaux8_v_n => Vaux8_v_n,
       Vaux8_v_p => Vaux8_v_p,
-      Vaux9_v_n => Vaux9_v_n,
-      Vaux9_v_p => Vaux9_v_p,
       Vp_Vn_v_n => Vp_Vn_v_n,
       Vp_Vn_v_p => Vp_Vn_v_p,
       dip_switches_4bits_tri_i(3 downto 0) => dip_switches_4bits_tri_i(3 downto 0),

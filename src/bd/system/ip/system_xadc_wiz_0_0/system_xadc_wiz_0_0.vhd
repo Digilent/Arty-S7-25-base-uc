@@ -91,10 +91,12 @@ entity system_xadc_wiz_0_0 is
     vauxn2          : in  STD_LOGIC;
     vauxp3          : in  STD_LOGIC;                         -- Auxiliary Channel 3
     vauxn3          : in  STD_LOGIC;
+    vauxp4          : in  STD_LOGIC;                         -- Auxiliary Channel 4
+    vauxn4          : in  STD_LOGIC;
+    vauxp5          : in  STD_LOGIC;                         -- Auxiliary Channel 5
+    vauxn5          : in  STD_LOGIC;
     vauxp8          : in  STD_LOGIC;                         -- Auxiliary Channel 8
     vauxn8          : in  STD_LOGIC;
-    vauxp9          : in  STD_LOGIC;                         -- Auxiliary Channel 9
-    vauxn9          : in  STD_LOGIC;
     vauxp10         : in  STD_LOGIC;                         -- Auxiliary Channel 10
     vauxn10         : in  STD_LOGIC;
     vauxp11         : in  STD_LOGIC;                         -- Auxiliary Channel 11
@@ -177,10 +179,12 @@ architecture xilinx of system_xadc_wiz_0_0 is
     vauxn2          : in  STD_LOGIC;
     vauxp3          : in  STD_LOGIC;                         -- Auxiliary Channel 3
     vauxn3          : in  STD_LOGIC;
+    vauxp4          : in  STD_LOGIC;                         -- Auxiliary Channel 4
+    vauxn4          : in  STD_LOGIC;
+    vauxp5          : in  STD_LOGIC;                         -- Auxiliary Channel 5
+    vauxn5          : in  STD_LOGIC;
     vauxp8          : in  STD_LOGIC;                         -- Auxiliary Channel 8
     vauxn8          : in  STD_LOGIC;
-    vauxp9          : in  STD_LOGIC;                         -- Auxiliary Channel 9
-    vauxn9          : in  STD_LOGIC;
     vauxp10         : in  STD_LOGIC;                         -- Auxiliary Channel 10
     vauxn10         : in  STD_LOGIC;
     vauxp11         : in  STD_LOGIC;                         -- Auxiliary Channel 11
@@ -245,10 +249,12 @@ begin
     vauxn2 => vauxn2,
     vauxp3 => vauxp3,
     vauxn3 => vauxn3,
+    vauxp4 => vauxp4,
+    vauxn4 => vauxn4,
+    vauxp5 => vauxp5,
+    vauxn5 => vauxn5,
     vauxp8 => vauxp8,
     vauxn8 => vauxn8,
-    vauxp9 => vauxp9,
-    vauxn9 => vauxn9,
     vauxp10 => vauxp10,
     vauxn10 => vauxn10,
     vauxp11 => vauxp11,

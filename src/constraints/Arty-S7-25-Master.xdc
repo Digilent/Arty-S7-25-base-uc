@@ -1,4 +1,4 @@
-## This file is a general .xdc for the ARTY Rev. B
+## This file is a general .xdc for the Arty S7 
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
@@ -95,14 +95,14 @@ set_property -dict {PACKAGE_PIN B13 IOSTANDARD LVCMOS33} [get_ports Vaux0_v_p]
 set_property -dict {PACKAGE_PIN A13 IOSTANDARD LVCMOS33} [get_ports Vaux0_v_n]
 set_property -dict {PACKAGE_PIN B15 IOSTANDARD LVCMOS33} [get_ports Vaux1_v_p]
 set_property -dict {PACKAGE_PIN A15 IOSTANDARD LVCMOS33} [get_ports Vaux1_v_n]
-set_property -dict {PACKAGE_PIN E12 IOSTANDARD LVCMOS33} [get_ports Vaux9_v_p]
-set_property -dict {PACKAGE_PIN D12 IOSTANDARD LVCMOS33} [get_ports Vaux9_v_n]
-set_property -dict {PACKAGE_PIN B17 IOSTANDARD LVCMOS33} [get_ports Vaux2_v_p]
-set_property -dict {PACKAGE_PIN A17 IOSTANDARD LVCMOS33} [get_ports Vaux2_v_n]
-set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports Vaux10_v_p]
-set_property -dict {PACKAGE_PIN B18 IOSTANDARD LVCMOS33} [get_ports Vaux10_v_n]
-set_property -dict {PACKAGE_PIN E16 IOSTANDARD LVCMOS33} [get_ports Vaux11_v_p]
-set_property -dict {PACKAGE_PIN E17 IOSTANDARD LVCMOS33} [get_ports Vaux11_v_n]
+set_property -dict {PACKAGE_PIN E12 IOSTANDARD LVCMOS33} [get_ports Vaux2_v_p]
+set_property -dict {PACKAGE_PIN D12 IOSTANDARD LVCMOS33} [get_ports Vaux2_v_n]
+set_property -dict {PACKAGE_PIN B17 IOSTANDARD LVCMOS33} [get_ports Vaux10_v_p]
+set_property -dict {PACKAGE_PIN A17 IOSTANDARD LVCMOS33} [get_ports Vaux10_v_n]
+set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports Vaux3_v_p]
+set_property -dict {PACKAGE_PIN B18 IOSTANDARD LVCMOS33} [get_ports Vaux3_v_n]
+set_property -dict {PACKAGE_PIN E16 IOSTANDARD LVCMOS33} [get_ports Vaux4_v_p]
+set_property -dict {PACKAGE_PIN E17 IOSTANDARD LVCMOS33} [get_ports Vaux4_v_n]
 
 ## Dedicated Analog Inputs
 set_property -dict {PACKAGE_PIN J10} [get_ports Vp_Vn_v_p]
@@ -138,12 +138,12 @@ set_property -dict {PACKAGE_PIN K9} [get_ports Vp_Vn_v_n]
 
 ## ChipKit Digital I/O On Inner Analog Header
 ## NOTE: These pins will need to be connected to the XADC core when used as differential analog inputs (Chipkit analog pins A6-A11)
-set_property -dict {PACKAGE_PIN B14 IOSTANDARD LVCMOS33} [get_ports Vaux8_v_p]
-set_property -dict {PACKAGE_PIN A14 IOSTANDARD LVCMOS33} [get_ports Vaux8_v_n]
-set_property -dict {PACKAGE_PIN D16 IOSTANDARD LVCMOS33} [get_ports Vaux3_v_p]
-set_property -dict {PACKAGE_PIN D17 IOSTANDARD LVCMOS33} [get_ports Vaux3_v_n]
-#set_property -dict { PACKAGE_PIN D14   IOSTANDARD LVCMOS33 } [get_ports { ck_io[24] }]; #IO_L12P_T1_MRCC_15 Sch=ck_a10_r
-#set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { ck_io[25] }]; #IO_L12N_T1_MRCC_15 Sch=ck_a11_r
+set_property -dict {PACKAGE_PIN B14 IOSTANDARD LVCMOS33} [get_ports Vaux8_v_p];
+set_property -dict {PACKAGE_PIN A14 IOSTANDARD LVCMOS33} [get_ports Vaux8_v_n];
+set_property -dict {PACKAGE_PIN D16 IOSTANDARD LVCMOS33} [get_ports Vaux11_v_p];
+set_property -dict {PACKAGE_PIN D17 IOSTANDARD LVCMOS33} [get_ports Vaux11_v_n];
+set_property -dict { PACKAGE_PIN D14   IOSTANDARD LVCMOS33 } [get_ports { Vaux5_v_p }];
+set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { Vaux5_v_n }];
 
 
 ## ChipKit Digital I/O High
@@ -204,6 +204,8 @@ set_property CONFIG_MODE SPIx4 [current_design]
 # Since a 1.35v supply is being used the internal reference is set to half that
 # value (i.e. 0.675v).
 #
+
 set_property INTERNAL_VREF 0.675 [get_iobanks 34]
+
 
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]

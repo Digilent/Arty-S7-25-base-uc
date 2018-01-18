@@ -13498,11 +13498,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:30 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:04 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:10ebca6e</spirit:value>
+            <spirit:value>7:ebf8f675</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13516,11 +13516,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:30 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:04 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:10ebca6e</spirit:value>
+            <spirit:value>7:ebf8f675</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13535,11 +13535,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:30 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:04 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:10ebca6e</spirit:value>
+            <spirit:value>7:ebf8f675</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13554,11 +13554,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:30 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:04 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:f4bff6b6</spirit:value>
+            <spirit:value>7:64b98145</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13573,11 +13573,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:31 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:04 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:f4bff6b6</spirit:value>
+            <spirit:value>7:64b98145</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13591,11 +13591,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:59:17 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:43:49 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:10ebca6e</spirit:value>
+            <spirit:value>7:ebf8f675</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -27564,7 +27564,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_EXT_NM_BRK" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_HW_MUL" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_ICACHE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_INTERRUPT" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_INTERRUPT" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_MSR_INSTR" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_NON_SECURE" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_PCMP_INSTR" xilinx:valueSource="user"/>

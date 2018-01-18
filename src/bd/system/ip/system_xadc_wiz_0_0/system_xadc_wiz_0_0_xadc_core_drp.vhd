@@ -177,10 +177,12 @@ entity system_xadc_wiz_0_0_xadc_core_drp is
      vauxn2                 : in  STD_LOGIC;
      vauxp3                 : in  STD_LOGIC;                         -- Auxiliary Channel 3
      vauxn3                 : in  STD_LOGIC;
+     vauxp4                 : in  STD_LOGIC;                         -- Auxiliary Channel 4
+     vauxn4                 : in  STD_LOGIC;
+     vauxp5                 : in  STD_LOGIC;                         -- Auxiliary Channel 5
+     vauxn5                 : in  STD_LOGIC;
      vauxp8                 : in  STD_LOGIC;                         -- Auxiliary Channel 8
      vauxn8                 : in  STD_LOGIC;
-     vauxp9                 : in  STD_LOGIC;                         -- Auxiliary Channel 9
-     vauxn9                 : in  STD_LOGIC;
      vauxp10                : in  STD_LOGIC;                         -- Auxiliary Channel 10
      vauxn10                : in  STD_LOGIC;
      vauxp11                : in  STD_LOGIC;                         -- Auxiliary Channel 11
@@ -946,11 +948,11 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
         aux_channel_p(3) <= vauxp3;
         aux_channel_n(3) <= vauxn3;
 
-        aux_channel_p(4) <= '0';
-        aux_channel_n(4) <= '0';
+        aux_channel_p(4) <= vauxp4;
+        aux_channel_n(4) <= vauxn4;
 
-        aux_channel_p(5) <= '0';
-        aux_channel_n(5) <= '0';
+        aux_channel_p(5) <= vauxp5;
+        aux_channel_n(5) <= vauxn5;
 
         aux_channel_p(6) <= '0';
         aux_channel_n(6) <= '0';
@@ -961,8 +963,8 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
         aux_channel_p(8) <= vauxp8;
         aux_channel_n(8) <= vauxn8;
 
-        aux_channel_p(9) <= vauxp9;
-        aux_channel_n(9) <= vauxn9;
+        aux_channel_p(9) <= '0';
+        aux_channel_n(9) <= '0';
 
         aux_channel_p(10) <= vauxp10;
         aux_channel_n(10) <= vauxn10;
@@ -988,7 +990,7 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
         INIT_41 => X"21A0", -- config reg 1
         INIT_42 => X"1400", -- config reg 2
         INIT_48 => X"0900", -- Sequencer channel selection
-        INIT_49 => X"0F0F", -- Sequencer channel selection
+        INIT_49 => X"0D3F", -- Sequencer channel selection
         INIT_4A => X"0000", -- Sequencer Average selection
         INIT_4B => X"0000", -- Sequencer Average selection
         INIT_4C => X"0000", -- Sequencer Bipolar selection

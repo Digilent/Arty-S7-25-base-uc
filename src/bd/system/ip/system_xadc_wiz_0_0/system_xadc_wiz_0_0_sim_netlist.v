@@ -1,14 +1,14 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-// Date        : Wed Dec  6 20:59:29 2017
+// Date        : Thu Jan 18 12:43:20 2018
 // Host        : DESKTOP-9HMNAI5 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/sam_work/git/digilent/Arty-S7-50-base-uc/src/bd/system/ip/system_xadc_wiz_0_0/system_xadc_wiz_0_0_sim_netlist.v
+//               C:/sam_work/git/digilent/Arty-S7-25-base-uc/src/bd/system/ip/system_xadc_wiz_0_0/system_xadc_wiz_0_0_sim_netlist.v
 // Design      : system_xadc_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7s50csga324-1
+// Device      : xc7s25csga324-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -42,10 +42,12 @@ module system_xadc_wiz_0_0
     vauxn2,
     vauxp3,
     vauxn3,
+    vauxp4,
+    vauxn4,
+    vauxp5,
+    vauxn5,
     vauxp8,
     vauxn8,
-    vauxp9,
-    vauxn9,
     vauxp10,
     vauxn10,
     vauxp11,
@@ -89,10 +91,12 @@ module system_xadc_wiz_0_0
   input vauxn2;
   input vauxp3;
   input vauxn3;
+  input vauxp4;
+  input vauxn4;
+  input vauxp5;
+  input vauxn5;
   input vauxp8;
   input vauxn8;
-  input vauxp9;
-  input vauxn9;
   input vauxp10;
   input vauxn10;
   input vauxp11;
@@ -142,16 +146,18 @@ module system_xadc_wiz_0_0
   wire vauxn11;
   wire vauxn2;
   wire vauxn3;
+  wire vauxn4;
+  wire vauxn5;
   wire vauxn8;
-  wire vauxn9;
   wire vauxp0;
   wire vauxp1;
   wire vauxp10;
   wire vauxp11;
   wire vauxp2;
   wire vauxp3;
+  wire vauxp4;
+  wire vauxp5;
   wire vauxp8;
-  wire vauxp9;
   wire vccaux_alarm_out;
   wire vccint_alarm_out;
   wire vn_in;
@@ -200,16 +206,18 @@ module system_xadc_wiz_0_0
         .vauxn11(vauxn11),
         .vauxn2(vauxn2),
         .vauxn3(vauxn3),
+        .vauxn4(vauxn4),
+        .vauxn5(vauxn5),
         .vauxn8(vauxn8),
-        .vauxn9(vauxn9),
         .vauxp0(vauxp0),
         .vauxp1(vauxp1),
         .vauxp10(vauxp10),
         .vauxp11(vauxp11),
         .vauxp2(vauxp2),
         .vauxp3(vauxp3),
+        .vauxp4(vauxp4),
+        .vauxp5(vauxp5),
         .vauxp8(vauxp8),
-        .vauxp9(vauxp9),
         .vn_in(vn_in),
         .vp_in(vp_in));
 endmodule
@@ -2184,10 +2192,12 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_axi_xadc
     vauxn2,
     vauxp3,
     vauxn3,
+    vauxp4,
+    vauxn4,
+    vauxp5,
+    vauxn5,
     vauxp8,
     vauxn8,
-    vauxp9,
-    vauxn9,
     vauxp10,
     vauxn10,
     vauxp11,
@@ -2228,10 +2238,12 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_axi_xadc
   input vauxn2;
   input vauxp3;
   input vauxn3;
+  input vauxp4;
+  input vauxn4;
+  input vauxp5;
+  input vauxn5;
   input vauxp8;
   input vauxn8;
-  input vauxp9;
-  input vauxn9;
   input vauxp10;
   input vauxn10;
   input vauxp11;
@@ -2395,16 +2407,18 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_axi_xadc
   wire vauxn11;
   wire vauxn2;
   wire vauxn3;
+  wire vauxn4;
+  wire vauxn5;
   wire vauxn8;
-  wire vauxn9;
   wire vauxp0;
   wire vauxp1;
   wire vauxp10;
   wire vauxp11;
   wire vauxp2;
   wire vauxp3;
+  wire vauxp4;
+  wire vauxp5;
   wire vauxp8;
-  wire vauxp9;
   wire vn_in;
   wire vp_in;
   wire wrack;
@@ -2549,8 +2563,8 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_axi_xadc
         .\INTR_CTRLR_GEN_I.ip2bus_wrack_reg (AXI_XADC_CORE_I_n_24),
         .Q({alarm_out,alarm_reg}),
         .\RESET_FLOPS[15].RST_FLOPS (SOFT_RESET_I_n_2),
-        .VAUXN({vauxn11,vauxn10,vauxn9,vauxn8,vauxn3,vauxn2,vauxn1,vauxn0}),
-        .VAUXP({vauxp11,vauxp10,vauxp9,vauxp8,vauxp3,vauxp2,vauxp1,vauxp0}),
+        .VAUXN({vauxn11,vauxn10,vauxn8,vauxn5,vauxn4,vauxn3,vauxn2,vauxn1,vauxn0}),
+        .VAUXP({vauxp11,vauxp10,vauxp8,vauxp5,vauxp4,vauxp3,vauxp2,vauxp1,vauxp0}),
         .\alarm_reg_reg[7]_0 ({p_1_in,p_2_in,p_3_in,p_4_in,p_5_in,p_6_in,AXI_XADC_CORE_I_n_16,ot_out}),
         .bus2ip_rdce({bus2ip_rdce[23],bus2ip_rdce[0]}),
         .bus2ip_reset_active_high(bus2ip_reset_active_high),
@@ -5085,8 +5099,8 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_xadc_core_drp
   input vn_in;
   input vp_in;
   input [15:0]s_axi_wdata;
-  input [7:0]VAUXN;
-  input [7:0]VAUXP;
+  input [8:0]VAUXN;
+  input [8:0]VAUXP;
   input [2:0]\s_axi_awaddr[6] ;
   input reset2ip_reset;
   input Bus_RNW_reg_reg;
@@ -5132,8 +5146,8 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_xadc_core_drp
   wire [8:0]Q;
   wire RESET;
   wire \RESET_FLOPS[15].RST_FLOPS ;
-  wire [7:0]VAUXN;
-  wire [7:0]VAUXP;
+  wire [8:0]VAUXN;
+  wire [8:0]VAUXP;
   wire XADC_INST_n_34;
   wire alarm_0_d1;
   wire [7:0]\alarm_reg_reg[7]_0 ;
@@ -5252,7 +5266,7 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_xadc_core_drp
     .INIT_46(16'h0000),
     .INIT_47(16'h0000),
     .INIT_48(16'h0900),
-    .INIT_49(16'h0F0F),
+    .INIT_49(16'h0D3F),
     .INIT_4A(16'h0000),
     .INIT_4B(16'h0000),
     .INIT_4C(16'h0000),
@@ -5300,8 +5314,8 @@ module system_xadc_wiz_0_0_system_xadc_wiz_0_0_xadc_core_drp
         .MUXADDR(NLW_XADC_INST_MUXADDR_UNCONNECTED[4:0]),
         .OT(\alarm_reg_reg[7]_0 [0]),
         .RESET(RESET),
-        .VAUXN({1'b0,1'b0,1'b0,1'b0,VAUXN[7:4],1'b0,1'b0,1'b0,1'b0,VAUXN[3:0]}),
-        .VAUXP({1'b0,1'b0,1'b0,1'b0,VAUXP[7:4],1'b0,1'b0,1'b0,1'b0,VAUXP[3:0]}),
+        .VAUXN({1'b0,1'b0,1'b0,1'b0,VAUXN[8:7],1'b0,VAUXN[6],1'b0,1'b0,VAUXN[5:0]}),
+        .VAUXP({1'b0,1'b0,1'b0,1'b0,VAUXP[8:7],1'b0,VAUXP[6],1'b0,1'b0,VAUXP[5:0]}),
         .VN(vn_in),
         .VP(vp_in));
   (* SOFT_HLUTNM = "soft_lutpair23" *) 

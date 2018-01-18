@@ -1088,11 +1088,11 @@ Read:      0 - No interrupt has occurred      1 - Interrupt has occurred  Write:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:f2b03759</spirit:value>
+            <spirit:value>7:378a75fd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1107,11 +1107,11 @@ Read:      0 - No interrupt has occurred      1 - Interrupt has occurred  Write:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:f2b03759</spirit:value>
+            <spirit:value>7:378a75fd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1135,11 +1135,11 @@ Read:      0 - No interrupt has occurred      1 - Interrupt has occurred  Write:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:488d9e56</spirit:value>
+            <spirit:value>7:aa32ce4e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1154,11 +1154,11 @@ Read:      0 - No interrupt has occurred      1 - Interrupt has occurred  Write:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:57:28 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:42:01 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:488d9e56</spirit:value>
+            <spirit:value>7:aa32ce4e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1172,11 +1172,11 @@ Read:      0 - No interrupt has occurred      1 - Interrupt has occurred  Write:
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 07 04:59:51 UTC 2017</spirit:value>
+            <spirit:value>Thu Jan 18 20:44:30 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:f2b03759</spirit:value>
+            <spirit:value>7:378a75fd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

@@ -1,14 +1,14 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
--- Date        : Wed Dec  6 20:59:29 2017
+-- Date        : Thu Jan 18 12:43:20 2018
 -- Host        : DESKTOP-9HMNAI5 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/sam_work/git/digilent/Arty-S7-50-base-uc/src/bd/system/ip/system_xadc_wiz_0_0/system_xadc_wiz_0_0_sim_netlist.vhdl
+--               C:/sam_work/git/digilent/Arty-S7-25-base-uc/src/bd/system/ip/system_xadc_wiz_0_0/system_xadc_wiz_0_0_sim_netlist.vhdl
 -- Design      : system_xadc_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7s50csga324-1
+-- Device      : xc7s25csga324-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -3311,8 +3311,8 @@ entity system_xadc_wiz_0_0_system_xadc_wiz_0_0_xadc_core_drp is
     vn_in : in STD_LOGIC;
     vp_in : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    VAUXN : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    VAUXP : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    VAUXN : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    VAUXP : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \s_axi_awaddr[6]\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     reset2ip_reset : in STD_LOGIC;
     Bus_RNW_reg_reg : in STD_LOGIC;
@@ -3479,7 +3479,7 @@ XADC_INST: unisim.vcomponents.XADC
       INIT_46 => X"0000",
       INIT_47 => X"0000",
       INIT_48 => X"0900",
-      INIT_49 => X"0F0F",
+      INIT_49 => X"0D3F",
       INIT_4A => X"0000",
       INIT_4B => X"0000",
       INIT_4C => X"0000",
@@ -3532,13 +3532,17 @@ XADC_INST: unisim.vcomponents.XADC
       OT => \^alarm_reg_reg[7]_0\(0),
       RESET => RESET,
       VAUXN(15 downto 12) => B"0000",
-      VAUXN(11 downto 8) => VAUXN(7 downto 4),
-      VAUXN(7 downto 4) => B"0000",
-      VAUXN(3 downto 0) => VAUXN(3 downto 0),
+      VAUXN(11 downto 10) => VAUXN(8 downto 7),
+      VAUXN(9) => '0',
+      VAUXN(8) => VAUXN(6),
+      VAUXN(7 downto 6) => B"00",
+      VAUXN(5 downto 0) => VAUXN(5 downto 0),
       VAUXP(15 downto 12) => B"0000",
-      VAUXP(11 downto 8) => VAUXP(7 downto 4),
-      VAUXP(7 downto 4) => B"0000",
-      VAUXP(3 downto 0) => VAUXP(3 downto 0),
+      VAUXP(11 downto 10) => VAUXP(8 downto 7),
+      VAUXP(9) => '0',
+      VAUXP(8) => VAUXP(6),
+      VAUXP(7 downto 6) => B"00",
+      VAUXP(5 downto 0) => VAUXP(5 downto 0),
       VN => vn_in,
       VP => vp_in
     );
@@ -5238,10 +5242,12 @@ entity system_xadc_wiz_0_0_system_xadc_wiz_0_0_axi_xadc is
     vauxn2 : in STD_LOGIC;
     vauxp3 : in STD_LOGIC;
     vauxn3 : in STD_LOGIC;
+    vauxp4 : in STD_LOGIC;
+    vauxn4 : in STD_LOGIC;
+    vauxp5 : in STD_LOGIC;
+    vauxn5 : in STD_LOGIC;
     vauxp8 : in STD_LOGIC;
     vauxn8 : in STD_LOGIC;
-    vauxp9 : in STD_LOGIC;
-    vauxn9 : in STD_LOGIC;
     vauxp10 : in STD_LOGIC;
     vauxn10 : in STD_LOGIC;
     vauxp11 : in STD_LOGIC;
@@ -5604,18 +5610,20 @@ AXI_XADC_CORE_I: entity work.system_xadc_wiz_0_0_system_xadc_wiz_0_0_xadc_core_d
       Q(8 downto 1) => \^alarm_out\(7 downto 0),
       Q(0) => alarm_reg(0),
       \RESET_FLOPS[15].RST_FLOPS\ => SOFT_RESET_I_n_2,
-      VAUXN(7) => vauxn11,
-      VAUXN(6) => vauxn10,
-      VAUXN(5) => vauxn9,
-      VAUXN(4) => vauxn8,
+      VAUXN(8) => vauxn11,
+      VAUXN(7) => vauxn10,
+      VAUXN(6) => vauxn8,
+      VAUXN(5) => vauxn5,
+      VAUXN(4) => vauxn4,
       VAUXN(3) => vauxn3,
       VAUXN(2) => vauxn2,
       VAUXN(1) => vauxn1,
       VAUXN(0) => vauxn0,
-      VAUXP(7) => vauxp11,
-      VAUXP(6) => vauxp10,
-      VAUXP(5) => vauxp9,
-      VAUXP(4) => vauxp8,
+      VAUXP(8) => vauxp11,
+      VAUXP(7) => vauxp10,
+      VAUXP(6) => vauxp8,
+      VAUXP(5) => vauxp5,
+      VAUXP(4) => vauxp4,
       VAUXP(3) => vauxp3,
       VAUXP(2) => vauxp2,
       VAUXP(1) => vauxp1,
@@ -6111,10 +6119,12 @@ entity system_xadc_wiz_0_0 is
     vauxn2 : in STD_LOGIC;
     vauxp3 : in STD_LOGIC;
     vauxn3 : in STD_LOGIC;
+    vauxp4 : in STD_LOGIC;
+    vauxn4 : in STD_LOGIC;
+    vauxp5 : in STD_LOGIC;
+    vauxn5 : in STD_LOGIC;
     vauxp8 : in STD_LOGIC;
     vauxn8 : in STD_LOGIC;
-    vauxp9 : in STD_LOGIC;
-    vauxn9 : in STD_LOGIC;
     vauxp10 : in STD_LOGIC;
     vauxn10 : in STD_LOGIC;
     vauxp11 : in STD_LOGIC;
@@ -6194,16 +6204,18 @@ U0: entity work.system_xadc_wiz_0_0_system_xadc_wiz_0_0_axi_xadc
       vauxn11 => vauxn11,
       vauxn2 => vauxn2,
       vauxn3 => vauxn3,
+      vauxn4 => vauxn4,
+      vauxn5 => vauxn5,
       vauxn8 => vauxn8,
-      vauxn9 => vauxn9,
       vauxp0 => vauxp0,
       vauxp1 => vauxp1,
       vauxp10 => vauxp10,
       vauxp11 => vauxp11,
       vauxp2 => vauxp2,
       vauxp3 => vauxp3,
+      vauxp4 => vauxp4,
+      vauxp5 => vauxp5,
       vauxp8 => vauxp8,
-      vauxp9 => vauxp9,
       vn_in => vn_in,
       vp_in => vp_in
     );

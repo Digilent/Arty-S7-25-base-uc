@@ -43,8 +43,8 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
-   create_project project_1 myproj -part xc7s50csga324-1
-   set_property BOARD_PART digilentinc.com:arty-s7-50:part0:1.0 [current_project]
+   create_project project_1 myproj -part xc7s25csga324-1
+   set_property BOARD_PART digilentinc.com:arty-s7-25:part0:1.0 [current_project]
 }
 
 
@@ -247,8 +247,9 @@ proc create_root_design { parentCell } {
   set Vaux1 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux1 ]
   set Vaux2 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux2 ]
   set Vaux3 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux3 ]
+  set Vaux4 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux4 ]
+  set Vaux5 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux5 ]
   set Vaux8 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux8 ]
-  set Vaux9 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux9 ]
   set Vaux10 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux10 ]
   set Vaux11 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vaux11 ]
   set Vp_Vn [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 Vp_Vn ]
@@ -420,8 +421,10 @@ proc create_root_design { parentCell } {
    CONFIG.CHANNEL_ENABLE_VAUXP1_VAUXN1 {true} \
    CONFIG.CHANNEL_ENABLE_VAUXP2_VAUXN2 {true} \
    CONFIG.CHANNEL_ENABLE_VAUXP3_VAUXN3 {true} \
+   CONFIG.CHANNEL_ENABLE_VAUXP4_VAUXN4 {true} \
+   CONFIG.CHANNEL_ENABLE_VAUXP5_VAUXN5 {true} \
    CONFIG.CHANNEL_ENABLE_VAUXP8_VAUXN8 {true} \
-   CONFIG.CHANNEL_ENABLE_VAUXP9_VAUXN9 {true} \
+   CONFIG.CHANNEL_ENABLE_VAUXP9_VAUXN9 {false} \
    CONFIG.CHANNEL_ENABLE_VP_VN {true} \
    CONFIG.ENABLE_RESET {false} \
    CONFIG.ENABLE_TEMP_BUS {false} \
@@ -439,8 +442,9 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net Vaux1_1 [get_bd_intf_ports Vaux1] [get_bd_intf_pins xadc_wiz_0/Vaux1]
   connect_bd_intf_net -intf_net Vaux2_1 [get_bd_intf_ports Vaux2] [get_bd_intf_pins xadc_wiz_0/Vaux2]
   connect_bd_intf_net -intf_net Vaux3_1 [get_bd_intf_ports Vaux3] [get_bd_intf_pins xadc_wiz_0/Vaux3]
+  connect_bd_intf_net -intf_net Vaux4_0_1 [get_bd_intf_ports Vaux4] [get_bd_intf_pins xadc_wiz_0/Vaux4]
+  connect_bd_intf_net -intf_net Vaux5_0_1 [get_bd_intf_ports Vaux5] [get_bd_intf_pins xadc_wiz_0/Vaux5]
   connect_bd_intf_net -intf_net Vaux8_1 [get_bd_intf_ports Vaux8] [get_bd_intf_pins xadc_wiz_0/Vaux8]
-  connect_bd_intf_net -intf_net Vaux9_1 [get_bd_intf_ports Vaux9] [get_bd_intf_pins xadc_wiz_0/Vaux9]
   connect_bd_intf_net -intf_net Vp_Vn_1 [get_bd_intf_ports Vp_Vn] [get_bd_intf_pins xadc_wiz_0/Vp_Vn]
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports push_buttons_4bits] [get_bd_intf_pins axi_gpio_input/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO1 [get_bd_intf_ports led_4bits] [get_bd_intf_pins axi_gpio_led/GPIO]

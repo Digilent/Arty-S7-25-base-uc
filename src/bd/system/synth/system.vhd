@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
---Date        : Wed Dec  6 20:57:27 2017
+--Date        : Thu Jan 18 12:41:59 2018
 --Host        : DESKTOP-9HMNAI5 running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -856,6 +856,30 @@ entity microblaze_0_local_memory_imp_OGE0N8 is
 end microblaze_0_local_memory_imp_OGE0N8;
 
 architecture STRUCTURE of microblaze_0_local_memory_imp_OGE0N8 is
+  component system_dlmb_bram_if_cntlr_0 is
+  port (
+    LMB_Clk : in STD_LOGIC;
+    LMB_Rst : in STD_LOGIC;
+    LMB_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB_AddrStrobe : in STD_LOGIC;
+    LMB_ReadStrobe : in STD_LOGIC;
+    LMB_WriteStrobe : in STD_LOGIC;
+    LMB_BE : in STD_LOGIC_VECTOR ( 0 to 3 );
+    Sl_DBus : out STD_LOGIC_VECTOR ( 0 to 31 );
+    Sl_Ready : out STD_LOGIC;
+    Sl_Wait : out STD_LOGIC;
+    Sl_UE : out STD_LOGIC;
+    Sl_CE : out STD_LOGIC;
+    BRAM_Rst_A : out STD_LOGIC;
+    BRAM_Clk_A : out STD_LOGIC;
+    BRAM_Addr_A : out STD_LOGIC_VECTOR ( 0 to 31 );
+    BRAM_EN_A : out STD_LOGIC;
+    BRAM_WEN_A : out STD_LOGIC_VECTOR ( 0 to 3 );
+    BRAM_Dout_A : out STD_LOGIC_VECTOR ( 0 to 31 );
+    BRAM_Din_A : in STD_LOGIC_VECTOR ( 0 to 31 )
+  );
+  end component system_dlmb_bram_if_cntlr_0;
   component system_dlmb_v10_0 is
   port (
     LMB_Clk : in STD_LOGIC;
@@ -885,6 +909,30 @@ architecture STRUCTURE of microblaze_0_local_memory_imp_OGE0N8 is
     LMB_BE : out STD_LOGIC_VECTOR ( 0 to 3 )
   );
   end component system_dlmb_v10_0;
+  component system_ilmb_bram_if_cntlr_0 is
+  port (
+    LMB_Clk : in STD_LOGIC;
+    LMB_Rst : in STD_LOGIC;
+    LMB_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB_AddrStrobe : in STD_LOGIC;
+    LMB_ReadStrobe : in STD_LOGIC;
+    LMB_WriteStrobe : in STD_LOGIC;
+    LMB_BE : in STD_LOGIC_VECTOR ( 0 to 3 );
+    Sl_DBus : out STD_LOGIC_VECTOR ( 0 to 31 );
+    Sl_Ready : out STD_LOGIC;
+    Sl_Wait : out STD_LOGIC;
+    Sl_UE : out STD_LOGIC;
+    Sl_CE : out STD_LOGIC;
+    BRAM_Rst_A : out STD_LOGIC;
+    BRAM_Clk_A : out STD_LOGIC;
+    BRAM_Addr_A : out STD_LOGIC_VECTOR ( 0 to 31 );
+    BRAM_EN_A : out STD_LOGIC;
+    BRAM_WEN_A : out STD_LOGIC_VECTOR ( 0 to 3 );
+    BRAM_Dout_A : out STD_LOGIC_VECTOR ( 0 to 31 );
+    BRAM_Din_A : in STD_LOGIC_VECTOR ( 0 to 31 )
+  );
+  end component system_ilmb_bram_if_cntlr_0;
   component system_ilmb_v10_0 is
   port (
     LMB_Clk : in STD_LOGIC;
@@ -914,54 +962,6 @@ architecture STRUCTURE of microblaze_0_local_memory_imp_OGE0N8 is
     LMB_BE : out STD_LOGIC_VECTOR ( 0 to 3 )
   );
   end component system_ilmb_v10_0;
-  component system_dlmb_bram_if_cntlr_0 is
-  port (
-    LMB_Clk : in STD_LOGIC;
-    LMB_Rst : in STD_LOGIC;
-    LMB_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
-    LMB_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
-    LMB_AddrStrobe : in STD_LOGIC;
-    LMB_ReadStrobe : in STD_LOGIC;
-    LMB_WriteStrobe : in STD_LOGIC;
-    LMB_BE : in STD_LOGIC_VECTOR ( 0 to 3 );
-    Sl_DBus : out STD_LOGIC_VECTOR ( 0 to 31 );
-    Sl_Ready : out STD_LOGIC;
-    Sl_Wait : out STD_LOGIC;
-    Sl_UE : out STD_LOGIC;
-    Sl_CE : out STD_LOGIC;
-    BRAM_Rst_A : out STD_LOGIC;
-    BRAM_Clk_A : out STD_LOGIC;
-    BRAM_Addr_A : out STD_LOGIC_VECTOR ( 0 to 31 );
-    BRAM_EN_A : out STD_LOGIC;
-    BRAM_WEN_A : out STD_LOGIC_VECTOR ( 0 to 3 );
-    BRAM_Dout_A : out STD_LOGIC_VECTOR ( 0 to 31 );
-    BRAM_Din_A : in STD_LOGIC_VECTOR ( 0 to 31 )
-  );
-  end component system_dlmb_bram_if_cntlr_0;
-  component system_ilmb_bram_if_cntlr_0 is
-  port (
-    LMB_Clk : in STD_LOGIC;
-    LMB_Rst : in STD_LOGIC;
-    LMB_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
-    LMB_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
-    LMB_AddrStrobe : in STD_LOGIC;
-    LMB_ReadStrobe : in STD_LOGIC;
-    LMB_WriteStrobe : in STD_LOGIC;
-    LMB_BE : in STD_LOGIC_VECTOR ( 0 to 3 );
-    Sl_DBus : out STD_LOGIC_VECTOR ( 0 to 31 );
-    Sl_Ready : out STD_LOGIC;
-    Sl_Wait : out STD_LOGIC;
-    Sl_UE : out STD_LOGIC;
-    Sl_CE : out STD_LOGIC;
-    BRAM_Rst_A : out STD_LOGIC;
-    BRAM_Clk_A : out STD_LOGIC;
-    BRAM_Addr_A : out STD_LOGIC_VECTOR ( 0 to 31 );
-    BRAM_EN_A : out STD_LOGIC;
-    BRAM_WEN_A : out STD_LOGIC_VECTOR ( 0 to 3 );
-    BRAM_Dout_A : out STD_LOGIC_VECTOR ( 0 to 31 );
-    BRAM_Din_A : in STD_LOGIC_VECTOR ( 0 to 31 )
-  );
-  end component system_ilmb_bram_if_cntlr_0;
   component system_lmb_bram_0 is
   port (
     clka : in STD_LOGIC;
@@ -2793,10 +2793,12 @@ entity system is
     Vaux2_v_p : in STD_LOGIC;
     Vaux3_v_n : in STD_LOGIC;
     Vaux3_v_p : in STD_LOGIC;
+    Vaux4_v_n : in STD_LOGIC;
+    Vaux4_v_p : in STD_LOGIC;
+    Vaux5_v_n : in STD_LOGIC;
+    Vaux5_v_p : in STD_LOGIC;
     Vaux8_v_n : in STD_LOGIC;
     Vaux8_v_p : in STD_LOGIC;
-    Vaux9_v_n : in STD_LOGIC;
-    Vaux9_v_p : in STD_LOGIC;
     Vp_Vn_v_n : in STD_LOGIC;
     Vp_Vn_v_p : in STD_LOGIC;
     dip_switches_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -2858,45 +2860,6 @@ architecture STRUCTURE of system is
     pwm_axi_aresetn : in STD_LOGIC
   );
   end component system_PWM_0_0;
-  component system_microblaze_0_axi_intc_0 is
-  port (
-    s_axi_aclk : in STD_LOGIC;
-    s_axi_aresetn : in STD_LOGIC;
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_awvalid : in STD_LOGIC;
-    s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_wvalid : in STD_LOGIC;
-    s_axi_wready : out STD_LOGIC;
-    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bvalid : out STD_LOGIC;
-    s_axi_bready : in STD_LOGIC;
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_arvalid : in STD_LOGIC;
-    s_axi_arready : out STD_LOGIC;
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rvalid : out STD_LOGIC;
-    s_axi_rready : in STD_LOGIC;
-    intr : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    processor_clk : in STD_LOGIC;
-    processor_rst : in STD_LOGIC;
-    irq : out STD_LOGIC;
-    processor_ack : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    interrupt_address : out STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component system_microblaze_0_axi_intc_0;
-  component system_microblaze_0_xlconcat_0 is
-  port (
-    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    dout : out STD_LOGIC_VECTOR ( 4 downto 0 )
-  );
-  end component system_microblaze_0_xlconcat_0;
   component system_axi_gpio_input_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -3127,6 +3090,45 @@ architecture STRUCTURE of system is
     Dbg_Disable : in STD_LOGIC
   );
   end component system_microblaze_0_0;
+  component system_microblaze_0_axi_intc_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    intr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    processor_clk : in STD_LOGIC;
+    processor_rst : in STD_LOGIC;
+    irq : out STD_LOGIC;
+    processor_ack : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    interrupt_address : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component system_microblaze_0_axi_intc_0;
+  component system_microblaze_0_xlconcat_0 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 4 downto 0 )
+  );
+  end component system_microblaze_0_xlconcat_0;
   component system_rst_clk_wiz_0_100M_0 is
   port (
     slowest_sync_clk : in STD_LOGIC;
@@ -3173,10 +3175,12 @@ architecture STRUCTURE of system is
     vauxn2 : in STD_LOGIC;
     vauxp3 : in STD_LOGIC;
     vauxn3 : in STD_LOGIC;
+    vauxp4 : in STD_LOGIC;
+    vauxn4 : in STD_LOGIC;
+    vauxp5 : in STD_LOGIC;
+    vauxn5 : in STD_LOGIC;
     vauxp8 : in STD_LOGIC;
     vauxn8 : in STD_LOGIC;
-    vauxp9 : in STD_LOGIC;
-    vauxn9 : in STD_LOGIC;
     vauxp10 : in STD_LOGIC;
     vauxn10 : in STD_LOGIC;
     vauxp11 : in STD_LOGIC;
@@ -3205,10 +3209,12 @@ architecture STRUCTURE of system is
   signal Vaux2_1_V_P : STD_LOGIC;
   signal Vaux3_1_V_N : STD_LOGIC;
   signal Vaux3_1_V_P : STD_LOGIC;
+  signal Vaux4_0_1_V_N : STD_LOGIC;
+  signal Vaux4_0_1_V_P : STD_LOGIC;
+  signal Vaux5_0_1_V_N : STD_LOGIC;
+  signal Vaux5_0_1_V_P : STD_LOGIC;
   signal Vaux8_1_V_N : STD_LOGIC;
   signal Vaux8_1_V_P : STD_LOGIC;
-  signal Vaux9_1_V_N : STD_LOGIC;
-  signal Vaux9_1_V_P : STD_LOGIC;
   signal Vp_Vn_1_V_N : STD_LOGIC;
   signal Vp_Vn_1_V_P : STD_LOGIC;
   signal axi_gpio_0_GPIO1_TRI_I : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -3470,10 +3476,12 @@ architecture STRUCTURE of system is
   attribute X_INTERFACE_INFO of Vaux2_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux2 V_P";
   attribute X_INTERFACE_INFO of Vaux3_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux3 V_N";
   attribute X_INTERFACE_INFO of Vaux3_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux3 V_P";
+  attribute X_INTERFACE_INFO of Vaux4_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux4 ";
+  attribute X_INTERFACE_INFO of Vaux4_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux4 ";
+  attribute X_INTERFACE_INFO of Vaux5_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux5 ";
+  attribute X_INTERFACE_INFO of Vaux5_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux5 ";
   attribute X_INTERFACE_INFO of Vaux8_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux8 V_N";
   attribute X_INTERFACE_INFO of Vaux8_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux8 V_P";
-  attribute X_INTERFACE_INFO of Vaux9_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux9 V_N";
-  attribute X_INTERFACE_INFO of Vaux9_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux9 V_P";
   attribute X_INTERFACE_INFO of Vp_Vn_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vp_Vn V_N";
   attribute X_INTERFACE_INFO of Vp_Vn_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vp_Vn V_P";
   attribute X_INTERFACE_INFO of qspi_flash_io0_i : signal is "xilinx.com:interface:spi:1.0 qspi_flash IO0_I";
@@ -3516,10 +3524,12 @@ begin
   Vaux2_1_V_P <= Vaux2_v_p;
   Vaux3_1_V_N <= Vaux3_v_n;
   Vaux3_1_V_P <= Vaux3_v_p;
+  Vaux4_0_1_V_N <= Vaux4_v_n;
+  Vaux4_0_1_V_P <= Vaux4_v_p;
+  Vaux5_0_1_V_N <= Vaux5_v_n;
+  Vaux5_0_1_V_P <= Vaux5_v_p;
   Vaux8_1_V_N <= Vaux8_v_n;
   Vaux8_1_V_P <= Vaux8_v_p;
-  Vaux9_1_V_N <= Vaux9_v_n;
-  Vaux9_1_V_P <= Vaux9_v_p;
   Vp_Vn_1_V_N <= Vp_Vn_v_n;
   Vp_Vn_1_V_P <= Vp_Vn_v_p;
   axi_gpio_0_GPIO1_TRI_I(3 downto 0) <= led_4bits_tri_i(3 downto 0);
@@ -4115,16 +4125,18 @@ xadc_wiz_0: component system_xadc_wiz_0_0
       vauxn11 => Vaux11_1_V_N,
       vauxn2 => Vaux2_1_V_N,
       vauxn3 => Vaux3_1_V_N,
+      vauxn4 => Vaux4_0_1_V_N,
+      vauxn5 => Vaux5_0_1_V_N,
       vauxn8 => Vaux8_1_V_N,
-      vauxn9 => Vaux9_1_V_N,
       vauxp0 => Vaux0_1_V_P,
       vauxp1 => Vaux1_1_V_P,
       vauxp10 => Vaux10_1_V_P,
       vauxp11 => Vaux11_1_V_P,
       vauxp2 => Vaux2_1_V_P,
       vauxp3 => Vaux3_1_V_P,
+      vauxp4 => Vaux4_0_1_V_P,
+      vauxp5 => Vaux5_0_1_V_P,
       vauxp8 => Vaux8_1_V_P,
-      vauxp9 => Vaux9_1_V_P,
       vccaux_alarm_out => NLW_xadc_wiz_0_vccaux_alarm_out_UNCONNECTED,
       vccint_alarm_out => NLW_xadc_wiz_0_vccint_alarm_out_UNCONNECTED,
       vn_in => Vp_Vn_1_V_N,
